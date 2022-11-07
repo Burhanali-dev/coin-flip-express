@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Coin Flip</title>
+  <title>21 Savage Fans</title>
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <section>
     <h1>Coin guessing game</h1>
     <img id="coin" src="https://i.ebayimg.com/images/g/xtcAAOSwLwBaZigS/s-l400.jpg" alt="">
-    <button id="headsBtn">Guess Heads</button>
-    <button id="tailsBtn">Guess Tails</button>
-    <p id="result"></p>
+    <button id="headsBtn" onclick=createE(0)>Guess Heads</button>
+    <button id="tailsBtn" onclick=createE(1)>Guess Tails</button>
+    <p id="result">
+      <% for(var i=0; i<coinflip.length; i++) {%>
+
+        <span id="coinflip">
+          <%= coinflip[i].result %>
+        </span>
+
+
+        <% } %>
+    </p>
+    <button onclick=deleteE(this)>delete</button>
   </section>
+
 
   <script src="main.js"></script>
 
 </body>
+
 </html>

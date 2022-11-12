@@ -1,4 +1,13 @@
-![21 Savage](public/21savage.jpg)
+## Coin Flip Express 
+
+
+
+
+Added a database to my coin flip game which save's all results to the data base and prints it to the dom. Users can also delete their results on the dom. 
+
+
+
+
 
 ## Installation
 

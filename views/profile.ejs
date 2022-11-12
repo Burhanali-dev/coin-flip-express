@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>21 Savage Fan Site</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header text-center">
+            <h1> <i class="fa-solid fa-dumbbell"></i>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+
+        <div class="row">
+        </div>
+        <div>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <h1>Meal Review</h1>
+                <tbody>
+                    <tr>
+                        <th scope="col" class="width60">
+                            Meal</th>
+                        <th scope="col" class="width20">
+                            Price</th>
+                        <th scope="col" class="width20">
+                            Resturant</th>
+                        <th scope="col" class="width20">
+                            Rating (out of 10)</th>
+                    </tr>
+
+                    <% for(var i=0; i<meals.length; i++) {%>
+                        <tr>
+                            <td  id="meal" class="pt-3-half"  >
+                                <%= meals[i].meal %>
+                            </td>
+                            <td oninput="updateE(this)"  id="price" class="editable pt-3-half" contenteditable="true">
+                                <%= meals[i].price %>
+                            </td>
+                            <td oninput="updateE(this)"  id="resturant" class= "editable pt-3-half" contenteditable="true">
+                                <%= meals[i].resturant %>
+                            </td>
+                            <td oninput="updateE(this)" id = "rating" class="editable pt-3-half" contenteditable="true">
+                                <%= meals[i].rating %>
+                            </td>
+                            <td>
+                                <button onclick=deleteE(this)>delete</button>
+                            </td>
+                        </tr>
+                        <% } %>
+                        
+                        <tr>
+                            <td  id="meal" class="editable pt-3-half" contenteditable="true" >
+                                add Meal
+                            </td>
+                            <td   id="price" class="editable pt-3-half" contenteditable="true">
+                                cost of meal
+                            </td>
+                            <td   id="resturant" class="editable pt-3-half" contenteditable="true">
+                                Resturant
+                            </td>
+                            <td  id = "rating" class="editable pt-3-half" contenteditable="true">
+                                Rating out of 10
+                            </td>
+                            <td>
+                                <button onclick=create(this)>Add</button>
+                            </td>    
+                        </tr>
+                        
+                </tbody>
+
+
+            </table>
+            <span class="glyphicon glyphicon-plus"></span>
+         
+        </div>
+
+
+        <!-- MDB -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+        <script src="main.js"></script>
+        <script>
+            let id = 0
+        </script>
+
+</body>
+
+</html>
